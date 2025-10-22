@@ -1,11 +1,21 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Home, Package, BarChart3, Settings, LogOut, ChevronLeft } from "lucide-react";
-import "./sidebar.css";
+import { useAuth } from "../context/useAuth";
+import {
+    Home,
+    Package,
+    BarChart3,
+    Settings,
+    LogOut,
+    ChevronLeft,
+    } from "lucide-react";
+    import "./Sidebar.css";
 
-export default function Sidebar({ userRole, onLogout }) {
+    export default function Sidebar({ onToggle }) {
+    const { user, logout } = useAuth();
     const [collapsed, setCollapsed] = useState(false);
 
+    // Rutas dinámicas por rol
     const routesByRole = {
         operador: [
         { path: "/inventario", name: "Inventario", icon: <Package size={18} /> },
@@ -20,25 +30,36 @@ export default function Sidebar({ userRole, onLogout }) {
         { path: "/dashboard", name: "Dashboard", icon: <Home size={18} /> },
         ],
         admin: [
-        { path: "/administracion", name: "Administración", icon: <Settings size={18} /> },
+        {
+            path: "/administracion",
+            name: "Administración",
+            icon: <Settings size={18} />,
+        },
         { path: "/dashboard", name: "Dashboard", icon: <Home size={18} /> },
         { path: "/reportes", name: "Reportes", icon: <BarChart3 size={18} /> },
         ],
     };
 
-    const links = routesByRole[userRole] || [];
+    const links = routesByRole[user?.role] || [];
+
+    // 🔄 Función para colapsar y notificar al padre
+    const handleToggle = () => {
+        const nuevoEstado = !collapsed;
+        setCollapsed(nuevoEstado);
+        if (onToggle) onToggle(nuevoEstado); // Notifica el cambio al padre (Dashboard, Inventario, Reportes)
+    };
 
     return (
         <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
-        {/* Header */}
         <div className="sidebar-header">
             <div className="sidebar-logo">
             <span className="dot" />
             {!collapsed && <h2 className="logo-text">Lechera 22</h2>}
             </div>
+
             <button
             className="toggle-btn"
-            onClick={() => setCollapsed(!collapsed)}
+            onClick={handleToggle}
             title="Colapsar menú"
             >
             <ChevronLeft
@@ -48,7 +69,6 @@ export default function Sidebar({ userRole, onLogout }) {
             </button>
         </div>
 
-        {/* Links */}
         <nav className="sidebar-links">
             {links.map((link) => (
             <NavLink
@@ -64,9 +84,8 @@ export default function Sidebar({ userRole, onLogout }) {
             ))}
         </nav>
 
-        {/* Footer */}
         <div className="sidebar-footer">
-            <button onClick={onLogout} className="logout-btn">
+            <button onClick={logout} className="logout-btn">
             <LogOut size={18} />
             {!collapsed && <span>Salir</span>}
             </button>

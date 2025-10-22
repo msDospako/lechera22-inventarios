@@ -10,12 +10,22 @@
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid #1e2433;
-    transition: width 0.3s ease;
+    transition: all 0.3s ease; /* 🧩 ampliado para animar todo */
     z-index: 50;
 }
 
 .sidebar.collapsed {
     width: 80px;
+}
+
+/* 🧩 Asegura que el fondo del contenido principal no quede blanco */
+body {
+    background-color: #0f1422;
+}
+
+/* 🧩 Recalco que el main container debe llenar el fondo */
+.flex {
+    background-color: #0f1422;
 }
 
 .sidebar-header {
