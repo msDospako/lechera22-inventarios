@@ -1,31 +1,67 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "../modules/login/LoginPage";
 import DashboardPage from "../modules/dashboard/DashboardPage";
 import InventarioPage from "../modules/inventario/InventarioPage";
 import ReportesPage from "../modules/reportes/ReportesPage";
 import AdministracionPage from "../modules/administracion/AdministracionPage";
 import AyudaPage from "../modules/ayuda/AyudaPage";
+import ProtectedRoute from "./ProtectedRoute";
 
 function AppRouter() {
-    return (
-    <Router>
-        <Routes>
-        /* Ruta por defecto */
-            <Route path="/" element={<Navigate to="/login" replace />} />
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<LoginPage />} />
 
-        /* Módulos principales */
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/inventario" element={<InventarioPage />} />
-            <Route path="/reportes" element={<ReportesPage />} />
-            <Route path="/administracion" element={<AdministracionPage />} />
-            <Route path="/ayuda" element={<AyudaPage />} />
+      {/* Rutas protegidas */}
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <DashboardPage />
+          </ProtectedRoute>
+        }
+      />
 
-            /* Ruta de fallback */
-            <Route path="*" element={<h1 className="text-center text-red-600 mt-10">404 - Página no encontrada</h1>} />
-            </Routes>
-    </Router>
-    );
+      <Route
+        path="/inventario"
+        element={
+          <ProtectedRoute>
+            <InventarioPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/reportes"
+        element={
+          <ProtectedRoute>
+            <ReportesPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/administracion"
+        element={
+          <ProtectedRoute>
+            <AdministracionPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/ayuda"
+        element={
+          <ProtectedRoute>
+            <AyudaPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
+    </Routes>
+  );
 }
 
 export default AppRouter;
