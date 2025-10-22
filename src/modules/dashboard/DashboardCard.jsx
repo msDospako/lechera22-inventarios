@@ -2,7 +2,7 @@ export default function DashboardCard({ title, subtitle, children, emphasis=fals
     return (
         <section
         className={
-            `rounded-2xl p-5 border transition-all duration-300 hover:scale-[1.01] 
+            `rounded-3xl p-5 border transition-all duration-300 hover:scale-[1.05] 
             ${emphasis 
                 ? "bg-[#1b2130] border-[#2a3145] shadow-[0_8px_30px_rgba(0,0,0,0.2)]" 
                 : "bg-[#151a28] border-[#242b3d] shadow-[0_6px_20px_rgba(0,0,0,0.12)]"}`
