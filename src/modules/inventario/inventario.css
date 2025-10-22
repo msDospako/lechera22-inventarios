@@ -1,0 +1,245 @@
+/* === CONTENEDOR GENERAL === */
+.inventario-container {
+    padding: 2rem;
+    background: #0f1422;
+    color: #e6ebf5;
+    min-height: 100vh;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+/* === ENCABEZADOS === */
+.inventario-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.inventario-subtitle {
+    color: #9aa3b2;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* === BARRA DE FILTROS Y BUSQUEDA === */
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.filtro-input,
+.filtro-select {
+    background: #151a28;
+    border: 1px solid #2a3145;
+    color: #e6ebf5;
+    padding: 8px 12px;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filtro-input:focus,
+.filtro-select:focus {
+    border-color: #b91c1c;
+    box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.25);
+}
+
+/* === BLOQUES POR FAMILIA === */
+.familia-bloque {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    border: 1px solid #2a3145;
+    border-radius: 20px;
+    background: rgba(18, 22, 34, 0.85);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.familia-titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f1f5ff;
+    text-transform: uppercase;
+    border-left: 4px solid #b91c1c;
+    padding-left: 10px;
+    margin-bottom: 16px;
+}
+
+/* === TABLA DE INVENTARIO === */
+.inventario-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.inventario-tabla th,
+.inventario-tabla td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #2a3145;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.inventario-tabla th {
+    background: #151a28;
+    color: #9aa3b2;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.inventario-tabla tr:hover {
+    background: rgba(185, 28, 28, 0.05);
+    transition: background 0.3s ease;
+}
+
+/* === ESTADOS VISUALES DE LOS LOTES === */
+.estado-ok {
+    background-color: rgba(34, 197, 94, 0.08);
+}
+
+.estado-proximo {
+    background-color: rgba(255, 200, 87, 0.08);
+}
+
+.estado-bajo,
+.estado-caducado {
+    background-color: rgba(255, 87, 87, 0.08);
+}
+
+.estado-caducado td {
+    color: #ff7878 !important;
+}
+
+/* === TEXTO DE ALERTA === */
+.alerta-texto {
+    color: #ff5959;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 900px) {
+    .inventario-tabla th,
+    .inventario-tabla td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .inventario-container {
+        padding: 1rem;
+    }
+
+    .familia-bloque {
+        padding: 1rem;
+    }
+
+    .inventario-tabla {
+        font-size: 0.75rem;
+    }
+
+    .filtros-container {
+        flex-direction: column;
+    }
+}
+
+/* === Mensaje sin resultados con animación === */
+.sin-resultados {
+    text-align: center;
+    color: #b8c1d8;
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #2a3145;
+    background: rgba(20, 26, 39, 0.7);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.sin-resultados-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    animation: pulse 2.2s infinite ease-in-out;
+}
+
+.sin-resultados-sub {
+    font-size: 0.9rem;
+    color: #8a94a8;
+    margin-top: 0.3rem;
+}
+
+/* === Animaciones === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+/* Fila expandible */
+.fila-lote:hover {
+    background-color: rgb(177, 175, 46);
+    transition: 0.2s;
+}
+
+.fila-nota {
+    background-color: #1b2130;
+}
+
+.nota-lote {
+    padding: 1rem;
+    background-color: #121826;
+    border: 1px solid #2a3145;
+    border-radius: 10px;
+    color: #e6ebf5;
+}
+
+.nota-lote p {
+    margin: 6px 0;
+    color: #cfd6e2;
+    line-height: 1.5;
+}
+
+/* Contenedor del footer de notas (alineación a la derecha) */
+.nota-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* Botón Datos de Producción */
+.btn-proceso {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    color: #cfd6e2;
+    border: 1px solid #2a3145;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: not-allowed;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+.btn-proceso:hover {
+    filter: brightness(1.1);
+}
