@@ -184,3 +184,175 @@
     font-size: 0.8rem;
   }
 }
+
+/* === CORRECCIÓN DE COLOR EN FILTROS === */
+.reportes-filtros label,
+.reportes-filtros span,
+.reportes-filtros h4 {
+  color: #ffffff !important; /* fuerza blanco en textos oscuros */
+}
+
+/* === AJUSTE DE ALINEACIÓN PARA CAMPOS DESPLAZADOS === */
+.reportes-filtros select,
+.reportes-filtros input {
+  vertical-align: middle;
+  margin-top: 2px;
+}
+
+/* === BOTONES DE FILTRO === */
+.reportes-filtros button {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.reportes-filtros button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+/* === FILTROS VISUALES MEJORADOS === */
+.filtros-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.filtro-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filtro-input,
+.filtro-select {
+  min-width: 180px;
+}
+
+.btn-filtrar {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-filtrar:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+/* === MODAL FLOTANTE === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 20, 34, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  background: #151a28;
+  border: 1px solid #2a3145;
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 520px;
+  width: 90%;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  animation: popIn 0.3s ease;
+}
+
+.modal-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff7b7b;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  color: #d3d8e8;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.btn-cerrar-modal {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-cerrar-modal:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+/* Animación */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === ESTADO VACÍO === */
+.reportes-vacio {
+  color: #b0b8cc;
+  font-size: 0.95rem;
+  margin: 10px 0 20px;
+  background: #151a28;
+  border: 1px dashed #2a3145;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+
+/* === SCROLL SUAVE PARA TABLAS GRANDES === */
+.tabla-scroll {
+  overflow-x: auto;
+  border-radius: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #991b1b #151a28;
+}
+
+.tabla-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tabla-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  border-radius: 4px;
+}
+.grafica-wrapper {
+    margin-top: 10px;
+    background: #151a28;
+    border: 1px solid #2a3145;
+    border-radius: 12px;
+    padding: 16px;
+}
