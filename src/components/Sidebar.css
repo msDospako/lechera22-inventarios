@@ -114,3 +114,45 @@ body {
     background: #1b2130;
     color: #fff;
 }
+
+/* Estilo destacado para el enlace de Administración */
+.sidebar-link[href="/administracion"] {
+    border: 1px solid #b91c1c;
+}
+
+.sidebar-link[href="/administracion"].active {
+    background: linear-gradient(135deg, #b91c1c, #991b1b);
+    box-shadow: 0 0 10px rgba(185, 28, 28, 0.4);
+}
+
+/* === Bloque especial para el enlace de Administración === */
+.sidebar-admin {
+  margin-top: auto;
+  padding: 8px 0;
+  border-top: 1px solid #1f2638;
+}
+
+.admin-link {
+  background: #191f2e;
+  border: 1px solid #b91c1c;
+  color: #fff;
+  margin: 10px 8px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.admin-link:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(185, 28, 28, 0.4);
+}
+
+.admin-link.active {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  border-color: #ff7b7b;
+  box-shadow: 0 0 12px rgba(185, 28, 28, 0.5);
+}
