@@ -8,14 +8,15 @@ import {
   Settings,
   LogOut,
   ChevronLeft,
+  HelpCircle,
 } from "lucide-react";
 import "./Sidebar.css";
 
 export default function Sidebar({ onToggle }) {
   const { user, logout } = useAuth();
   const [collapsed, setCollapsed] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
-  // 🔧 Menús dinámicos por rol
   const routesByRole = {
     operador: [
       { path: "/inventario", name: "Inventario", icon: <Package size={18} /> },
@@ -44,8 +45,7 @@ export default function Sidebar({ onToggle }) {
     if (onToggle) onToggle(nuevoEstado);
   };
 
-  const esAdmin =
-    user?.role === "admin" || user?.role === "direccion"; // 🧱 condición para mostrar el botón especial
+  const esAdmin = user?.role === "admin" || user?.role === "direccion";
 
   return (
     <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
@@ -82,6 +82,28 @@ export default function Sidebar({ onToggle }) {
           </NavLink>
         ))}
       </nav>
+
+      {/* === Enlace universal al Centro de Ayuda === */}
+      <div
+        className="sidebar-help"
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      >
+        <NavLink
+          to="/ayuda"
+          className={({ isActive }) =>
+            `sidebar-link help-link ${isActive ? "active" : ""}`
+          }
+        >
+          <HelpCircle size={18} />
+          {!collapsed && <span>Centro de Ayuda</span>}
+        </NavLink>
+
+        {/* Tooltip accesible solo en modo colapsado */}
+        {collapsed && showTooltip && (
+          <div className="help-tooltip">¿Necesitas ayuda?</div>
+        )}
+      </div>
 
       {/* === Acceso especial solo admin/dirección === */}
       {esAdmin && (

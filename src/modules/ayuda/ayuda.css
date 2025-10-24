@@ -1,0 +1,109 @@
+.ayuda-container {
+  background-color: #0f1422;
+  color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.ayuda-header {
+  border-bottom: 1px solid #242b3d;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.ayuda-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff7b7b;
+}
+
+.ayuda-subtitle {
+  font-size: 0.95rem;
+  color: #c5ccde;
+}
+
+/* === TARJETAS DE AYUDA === */
+.help-card {
+  background: #151a28;
+  border: 1px solid #2a3145;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.help-card:hover {
+  border-color: #ff5959;
+  transform: scale(1.02);
+}
+
+.help-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.help-icon {
+  color: #ff7b7b;
+  margin-bottom: 6px;
+}
+
+.help-list li,
+.help-steps li,
+.help-links li {
+  margin-bottom: 8px;
+  color: #e0e6f3;
+  line-height: 1.4;
+}
+
+.help-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.help-btn {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.help-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* === CONTACTO === */
+.help-contact {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* === SOBRE LA APP === */
+.about {
+  border-left: 4px solid #ff5959;
+  padding-left: 14px;
+  background: #111827;
+  font-size: 0.95rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .ayuda-container {
+    padding: 16px;
+  }
+
+  .help-card {
+    text-align: center;
+  }
+
+  .help-btn {
+    width: 100%;
+  }
+}
