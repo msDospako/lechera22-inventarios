@@ -1,140 +1,31 @@
-/* === CONTENEDOR PRINCIPAL === */
+/* ===============================================
+   ADMINISTRACION MODULE — OVERRIDES Y AJUSTES ESPECÍFICOS
+   Lechera 22 Inventarios
+   =============================================== */
+
+/* Fondo del módulo con gradiente reforzado */
 .admin-container {
-  color: #ffffff;
-  background-color: #0f1422;
-  min-height: 100vh;
-  padding: 24px;
-  box-sizing: border-box;
+  background: linear-gradient(135deg, #0f1422, #1e293b);
 }
 
-/* === ENCABEZADO GENERAL === */
-.admin-header {
-  border-bottom: 1px solid #242b3d;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-}
-
+/* Ajuste del título principal para resaltar el rojo corporativo */
 .admin-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ff7b7b;
+  color: var(--color-primary);
 }
 
-.admin-subtitle {
-  font-size: 0.95rem;
-  color: #c5ccde;
-}
-
-/* === SECCIONES === */
-.admin-seccion {
-  margin-top: 28px;
-}
-
-.admin-subtitulo {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 14px;
-  border-left: 4px solid #ff5959;
-  padding-left: 10px;
-}
-
-/* === TABLAS === */
-.admin-tabla {
-  width: 100%;
-  overflow-x: auto;
-  margin-top: 10px;
-}
-
-.admin-tabla table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #131a29;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.admin-tabla th,
-.admin-tabla td {
-  border: 1px solid #2a3145;
-  padding: 10px 12px;
-  text-align: left;
-  font-size: 0.9rem;
-  color: #e0e6f3;
-}
-
-.admin-tabla th {
-  background: #1f2538;
-  color: #ff7b7b;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
-.admin-tabla tr:nth-child(even) {
-  background-color: #151c2b;
-}
-
-.admin-tabla tr:hover {
-  background-color: #202739;
-}
-
-/* === ESTADOS DE USUARIO === */
-.estado.activo {
-  color: #42d27c;
-  font-weight: 600;
-}
-
-.estado.inactivo {
-  color: #ff5959;
-  font-weight: 600;
-}
-
-/* === BOTONES === */
-.admin-btn,
-.admin-btn-sec {
-  padding: 6px 14px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: transform 0.2s, filter 0.2s;
-  margin-right: 6px;
-}
-
+/* Botones principales con brillo uniforme */
 .admin-btn {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 }
 
 .admin-btn:hover {
-  transform: scale(1.05);
-  filter: brightness(1.15);
+  filter: brightness(1.2);
 }
 
-/* 🔧 Variantes de acción */
-.admin-btn.edit:hover {
-  background: #2563eb;
-  border-color: #2563eb;
-  color: #fff;
-}
-
-.admin-btn.disable:hover {
-  background: #991b1b;
-  border-color: #991b1b;
-  color: #fff;
-}
-
-.admin-btn.reset:hover {
-  background: #b45309;
-  border-color: #b45309;
-  color: #fff;
-}
-
+/* Variación más tenue para botones secundarios */
 .admin-btn-sec {
   background: #1b2130;
-  color: #e0e6f3;
-  border: 1px solid #2a3145;
+  border: 1px solid var(--color-border);
 }
 
 .admin-btn-sec:hover {
@@ -142,264 +33,19 @@
   filter: brightness(1.1);
 }
 
-/* === FORMULARIOS Y CAMPOS === */
-.admin-form {
-  display: grid;
-  gap: 10px;
-  margin-top: 16px;
+/* Borde lateral en subtítulos de sección */
+.admin-subtitulo {
+  border-left: 4px solid var(--color-primary);
 }
 
-.admin-form input,
-.admin-form select {
-  background: #151a28;
-  border: 1px solid #2a3145;
-  border-radius: 8px;
-  padding: 10px;
-  color: #ffffff;
-  font-size: 0.9rem;
-}
-
-.admin-form input:focus,
-.admin-form select:focus {
-  border-color: #ff5959;
-  outline: none;
-}
-
-/* === PLACEHOLDERS === */
-.admin-placeholder {
-  background-color: #111827;
-  border: 1px dashed #ff5959;
-  border-radius: 10px;
-  padding: 16px;
-  margin-top: 10px;
-}
-
-.admin-note {
-  color: #fca5a5;
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .admin-tabla th,
-  .admin-tabla td {
-    font-size: 0.8rem;
-    padding: 8px;
-  }
-
-  .admin-btn,
-  .admin-btn-sec {
-    font-size: 0.75rem;
-    padding: 6px 10px;
-  }
-}
-
-.admin-acciones {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 8px;
-}
-
-/* === MODAL EMERGENTE === */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(15, 20, 34, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  backdrop-filter: blur(3px);
-}
-
-.modal-content {
-  background-color: #131a29;
-  border-radius: 12px;
-  padding: 24px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  border: 1px solid #2a3145;
-  animation: modalFadeIn 0.3s ease;
-}
-
-.modal-content h3 {
-  color: #ff7b7b;
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-/* === ANIMACIÓN === */
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === TEXTAREA ESTILO === */
-.textarea-parametro {
-  background: #151a28;
-  border: 1px solid #2a3145;
-  border-radius: 8px;
-  padding: 10px;
-  color: #ffffff;
-  font-size: 0.9rem;
-  resize: none;
-}
-
-.textarea-parametro:focus {
-  border-color: #ff5959;
-  outline: none;
-}
-
-/* Alineación del botón superior */
-.admin-acciones {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-}
-
-/* === MODAL TEXTAREA (hereda estilo de parámetros) === */
-.textarea-parametro {
-  background: #151a28;
-  border: 1px solid #2a3145;
-  border-radius: 8px;
-  padding: 10px;
-  color: #ffffff;
-  font-size: 0.9rem;
-  resize: none;
-}
-
-.textarea-parametro:focus {
-  border-color: #ff5959;
-  outline: none;
-}
-
-/* Alineación de acciones */
-.admin-acciones {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-}
-
-/* === CHIPS DE PERMISOS === */
-.admin-chip {
-  display: inline-block;
-  background: #1b2130;
-  color: #cdd3e0;
-  border: 1px solid #2a3145;
-  border-radius: 12px;
-  padding: 4px 10px;
-  font-size: 0.8rem;
-  margin: 2px;
-  transition: all 0.2s ease;
-}
-
-.admin-chip:hover {
-  background: #242b3d;
-  border-color: #ff5959;
-  color: #fff;
-}
-
-/* === BITÁCORA === */
-.admin-bitacora {
-  margin-top: 24px;
-}
-
-.admin-tabla td:nth-child(6) {
-  max-width: 350px;
-  word-wrap: break-word;
-}
-
-.admin-tabla td,
-.admin-tabla th {
-  vertical-align: top;
-}
-
-.admin-btn-sec + .admin-btn {
-  margin-left: 8px;
-}
-
-/* === SUBTÍTULOS SECUNDARIOS === */
-.admin-subsubtitulo {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ff7b7b;
-  margin-bottom: 10px;
-  margin-top: 16px;
-}
-
-/* === MODAL FLOTANTE === */
-.admin-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(15, 20, 34, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  backdrop-filter: blur(3px);
-  animation: fadeIn 0.3s ease;
-}
-
+/* Modal con sombra más profunda */
 .admin-modal {
-  background-color: #151a28;
-  border: 1px solid #2a3145;
-  border-radius: 12px;
-  width: 400px;
-  max-width: 90%;
-  padding: 24px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  color: #fff;
-  text-align: center;
-  animation: slideIn 0.4s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
-.admin-modal-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ff7b7b;
-  margin-bottom: 10px;
+/* Chip de permisos con transición más suave */
+.admin-chip {
+  transition: all 0.25s ease;
 }
 
-.admin-modal-text {
-  font-size: 0.95rem;
-  color: #d3d8e8;
-  margin-bottom: 20px;
-}
-
-.admin-modal-actions {
-  display: flex;
-  justify-content: space-around;
-}
-
-/* === ANIMACIONES === */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideIn {
-  from { transform: translateY(-10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+/* Espacio reservado para futuros overrides o ampliaciones */

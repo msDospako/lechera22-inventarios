@@ -1,134 +1,31 @@
-/* === CONTENEDOR PRINCIPAL === */
+/* ===============================================
+   LOGIN MODULE — OVERRIDES Y AJUSTES ESPECÍFICOS
+   Lechera 22 Inventarios
+   =============================================== */
+
+/* Ajuste opcional del fondo principal */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    animation: fadeInBg 1.2s ease forwards;
+    background: linear-gradient(135deg, var(--color-primary), #1e293b);
 }
 
-/* === TARJETA CENTRAL === */
-.login-card {
-    background-color: #111827;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    width: 100%;
-    max-width: 400px;
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-    animation: slideFadeIn 0.8s ease forwards;
-}
-
-/* === TEXTOS === */
-.login-title {
-    text-align: center;
-    color: #ff5959;
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.login-subtitle {
-    text-align: center;
-    color: #cbd5e1;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    }
-
-/* === INPUTS === */
-.login-input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    background-color: #1e293b;
-    color: #f8fafc;
-    transition: all 0.3s ease;
-    margin-bottom: 1rem;
-}
-
-.login-input:focus {
-    border-color: #ff5959;
-    box-shadow: 0 0 0 3px rgba(255, 89, 89, 0.25);
-    outline: none;
-}
-
-/* === BOTÓN === */
+/* Ajuste de botón principal con gradiente corporativo */
 .login-button {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background-color: #b91c1c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 }
 
+/* Hover personalizado más intenso */
 .login-button:hover {
-    background-color: #991b1b;
+    filter: brightness(1.1);
 }
 
-/* === MENSAJE DE ERROR === */
-.login-error {
-    color: #f87171;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+/* Ajuste de títulos para resaltar identidad corporativa */
+.login-title {
+    color: var(--color-primary);
 }
 
-/* === FOOTER === */
-.login-footer {
-    text-align: center;
-    font-size: 0.75rem;
-    color: #9ca3af;
-    margin-top: 1.5rem;
+/* Subtítulo más suave en contraste */
+.login-subtitle {
+    color: #cbd5e1;
 }
 
-/* === ANIMACIONES === */
-@keyframes slideFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInBg {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* === FORMULARIO DE LOGIN === */
-.login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centra horizontalmente */
-    justify-content: center;
-    width: 100%;
-}
-
-/* === CAMPOS DE ENTRADA === */
-.login-input {
-    width: 90%;  /* los inputs se ajustan un poco para dejar márgenes iguales */
-    margin: 0.5rem auto;
-    display: block;
-}
-
-/* === BOTÓN DE LOGIN === */
-.login-button {
-    width: 90%;
-    display: block;
-    margin: 1rem auto 0 auto; /* centrado respecto a los inputs */
-    text-align: center;
-}
+/* Espacio reservado para futuros overrides del módulo */

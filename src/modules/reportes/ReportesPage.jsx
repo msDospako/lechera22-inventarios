@@ -10,6 +10,7 @@ import ReportesInventario from "./ReportesInventario";
 import ReportesTablaGeneral from "./ReportesTablaGeneral";
 import ReportesGraficas from "./ReportesGraficas";   
 
+import "../../theme.css"
 import "./reportes.css";
 
 export default function ReportesPage() {

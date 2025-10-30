@@ -8,6 +8,8 @@ import AdminSeguridad from "./AdminSeguridad";
 import AdminLogs from "./AdminLogs";
 import AdminRoles from "./AdminRoles";
 import AdminBitacora from "./AdminBitacora";
+
+import "../../theme.css"
 import "./administracion.css";
 
 export default function AdministracionPage() {

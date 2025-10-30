@@ -1,4 +1,5 @@
 import LoginForm from "./LoginForm";
+import "../../theme.css";
 import "./login.css";
 
 export default function LoginPage() {

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useAuth } from "../../context/useAuth";
 import Sidebar from "../../components/Sidebar";
 import productosBase from "../../data/productosBase.js";
+
+import "../../theme.css"
 import "./inventario.css";
 
 export default function InventarioPage() {

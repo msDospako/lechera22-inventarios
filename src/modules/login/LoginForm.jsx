@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../context/useAuth"; // 👈 usamos el contexto centralizado
+import "../../theme.css";
 import "./login.css";
 
 export default function LoginForm() {

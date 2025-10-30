@@ -1,109 +1,43 @@
+/* ===============================================
+   AYUDA MODULE — OVERRIDES Y AJUSTES ESPECÍFICOS
+   Lechera 22 Inventarios
+   =============================================== */
+
+/* Fondo general con sutil gradiente corporativo */
 .ayuda-container {
-  background-color: #0f1422;
-  color: #ffffff;
-  min-height: 100vh;
-  box-sizing: border-box;
+  background: linear-gradient(135deg, #0f1422, #1e293b);
 }
 
-.ayuda-header {
-  border-bottom: 1px solid #242b3d;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-}
-
+/* Título principal con énfasis institucional */
 .ayuda-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ff7b7b;
+  color: var(--color-primary);
 }
 
-.ayuda-subtitle {
-  font-size: 0.95rem;
-  color: #c5ccde;
-}
-
-/* === TARJETAS DE AYUDA === */
+/* Refuerzo visual en los bordes de las tarjetas */
 .help-card {
-  background: #151a28;
-  border: 1px solid #2a3145;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 24px;
-  transition: all 0.3s ease;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-base);
+  padding-left: 1.2rem;
 }
 
-.help-card:hover {
-  border-color: #ff5959;
-  transform: scale(1.02);
+.help-card ul,
+.help-card ol {
+  margin-left: 1.4rem; /* separa las viñetas del borde */
+  padding-left: 0.6rem; /* alinea mejor el texto con el contenido */
 }
 
-.help-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.help-icon {
-  color: #ff7b7b;
-  margin-bottom: 6px;
-}
-
-.help-list li,
-.help-steps li,
-.help-links li {
-  margin-bottom: 8px;
-  color: #e0e6f3;
-  line-height: 1.4;
-}
-
-.help-links {
-  list-style: none;
-  padding-left: 0;
-}
-
+/* Botones con gradiente global corporativo */
 .help-btn {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.9rem;
-  margin-top: 10px;
-  transition: transform 0.2s, filter 0.2s;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 }
 
 .help-btn:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+  filter: brightness(1.15);
 }
 
-/* === CONTACTO === */
-.help-contact {
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
-/* === SOBRE LA APP === */
+/* Borde lateral para la sección “Sobre la App” */
 .about {
-  border-left: 4px solid #ff5959;
-  padding-left: 14px;
-  background: #111827;
-  font-size: 0.95rem;
+  border-left: 4px solid var(--color-primary);
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .ayuda-container {
-    padding: 16px;
-  }
-
-  .help-card {
-    text-align: center;
-  }
-
-  .help-btn {
-    width: 100%;
-  }
-}
+/* Espacio reservado para futuros overrides */

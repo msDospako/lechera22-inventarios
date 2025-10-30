@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../context/useAuth";
 import DashboardCard from "./DashboardCard";
 import Sidebar from "../../components/Sidebar";
+import "../../theme.css";
 import "./dashboard.css";
 
 export default function DashboardPage() {

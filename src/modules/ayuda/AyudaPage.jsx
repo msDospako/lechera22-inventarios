@@ -1,5 +1,7 @@
 import { HelpCircle, BookOpen, Download, Mail, Info } from "lucide-react";
 import Sidebar from "../../components/Sidebar";
+
+import "../../theme.css";
 import "./ayuda.css";
 
 export default function AyudaPage() {

@@ -1,358 +1,53 @@
-/* === CONTENEDOR GENERAL === */
+/* ===============================================
+   REPORTES MODULE — OVERRIDES Y AJUSTES ESPECÍFICOS
+   Lechera 22 Inventarios
+   =============================================== */
+
+/* Fondo de sección general con refuerzo de contraste */
 .reportes-container {
-  color: #ffffff; /* 🔥 Texto blanco global */
-  padding: 24px;
-  background-color: #0f1422;
-  min-height: 100vh;
-  box-sizing: border-box;
+  background: radial-gradient(800px 400px at 100% 0%, #121827 10%, transparent 80%),
+              linear-gradient(135deg, #0f1422, #1e293b);
 }
 
-/* === ENCABEZADO === */
-.reportes-header {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  border-bottom: 1px solid #242b3d;
-  padding-bottom: 12px;
-}
-
+/* Título principal con énfasis corporativo */
 .reportes-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ff7b7b; /* rojo más brillante */
+  color: var(--color-primary);
 }
 
-.reportes-subtitle {
-  color: #d3d8e8; /* texto secundario más claro */
-  font-size: 0.95rem;
-}
-
-.reportes-fecha {
-  font-size: 0.8rem;
-  color: #aab3cc;
-}
-
-/* === FILTROS === */
-.reportes-filtros {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center; /* ✅ centra verticalmente los inputs */
-  gap: 10px;
-  margin: 24px 0;
-  color: #ffffff; /* ✅ asegura texto blanco en todos los labels o encabezados */
-}
-
-.reportes-filtros label {
-  color: #ffffff; /* ✅ texto blanco en etiquetas */
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.reportes-filtros input,
-.reportes-filtros select {
-  padding: 8px 10px;
-  border-radius: 8px;
-  border: 1px solid #2a3145;
-  background: #151a28;
-  color: #ffffff; /* ✅ texto blanco dentro del campo */
-  font-size: 0.9rem;
-  outline: none;
-}
-
-.reportes-filtros input::placeholder {
-  color: #b0b8cc; /* ✅ placeholder visible */
-}
-
-.reportes-filtros button {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.2s, filter 0.2s;
-}
-
-.reportes-filtros button:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* === SECCIONES === */
-.reportes-seccion {
-  margin-top: 30px;
-}
-
-.reportes-subtitulo {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 14px;
-  border-left: 4px solid #ff5959;
-  padding-left: 10px;
-}
-
-/* === TARJETAS KPI === */
-.reportes-kpis {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.kpi-card {
-  background: #151a28;
-  border: 1px solid #2a3145;
-  border-radius: 14px;
-  padding: 18px;
-  transition: all 0.3s ease;
-  color: #ffffff; /* 🔥 texto blanco */
-}
-
-.kpi-card:hover {
-  transform: scale(1.03);
-  border-color: #ff5959;
-}
-
-.kpi-card h4 {
-  font-size: 0.9rem;
-  color: #d0d7e8;
-  margin-bottom: 6px;
-}
-
-.kpi-valor {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-/* === TABLAS === */
-.reportes-tabla {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  background-color: #131a29;
-  border-radius: 10px;
-  overflow: hidden;
-  color: #ffffff; /* 🔥 texto claro global en tablas */
-}
-
-.reportes-tabla th,
-.reportes-tabla td {
-  border: 1px solid #2a3145;
-  padding: 10px 12px;
-  text-align: left;
-  font-size: 0.9rem;
-}
-
-.reportes-tabla th {
-  background: #1f2538;
-  color: #ff7b7b;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.reportes-tabla td {
-  color: #e0e6f3; /* texto de celdas */
-}
-
-.reportes-tabla tr:nth-child(even) {
-  background-color: #151c2b;
-}
-
-.reportes-tabla tr:hover {
-  background-color: #202739;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .reportes-container {
-    padding: 16px;
-  }
-
-  .reportes-filtros {
-    flex-direction: column;
-  }
-
-  .kpi-card {
-    text-align: center;
-  }
-
-  .reportes-tabla th,
-  .reportes-tabla td {
-    font-size: 0.8rem;
-  }
-}
-
-/* === CORRECCIÓN DE COLOR EN FILTROS === */
-.reportes-filtros label,
-.reportes-filtros span,
-.reportes-filtros h4 {
-  color: #ffffff !important; /* fuerza blanco en textos oscuros */
-}
-
-/* === AJUSTE DE ALINEACIÓN PARA CAMPOS DESPLAZADOS === */
-.reportes-filtros select,
-.reportes-filtros input {
-  vertical-align: middle;
-  margin-top: 2px;
-}
-
-/* === BOTONES DE FILTRO === */
-.reportes-filtros button {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  border: none;
-  border-radius: 8px;
-  padding: 8px 18px;
-  font-weight: 500;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.2s, filter 0.2s;
-}
-
-.reportes-filtros button:hover {
-  transform: scale(1.05);
-  filter: brightness(1.15);
-}
-
-/* === FILTROS VISUALES MEJORADOS === */
-.filtros-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
-}
-
-.filtro-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.filtro-input,
-.filtro-select {
-  min-width: 180px;
-}
-
-.btn-filtrar {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.btn-filtrar:hover {
-  transform: scale(1.05);
-  filter: brightness(1.15);
-}
-
-/* === MODAL FLOTANTE === */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 20, 34, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 200;
-  backdrop-filter: blur(6px);
-}
-
-.modal-content {
-  background: #151a28;
-  border: 1px solid #2a3145;
-  border-radius: 16px;
-  padding: 28px;
-  max-width: 520px;
-  width: 90%;
-  color: #ffffff;
-  text-align: center;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-  animation: popIn 0.3s ease;
-}
-
-.modal-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #ff7b7b;
-  margin-bottom: 10px;
-}
-
-.modal-text {
-  color: #d3d8e8;
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-
+/* Botones de filtro con gradiente reforzado */
+.reportes-filtros button,
+.btn-filtrar,
 .btn-cerrar-modal {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
 }
 
+/* Resaltar hover con más luz */
+.reportes-filtros button:hover,
+.btn-filtrar:hover,
 .btn-cerrar-modal:hover {
-  transform: scale(1.05);
-  filter: brightness(1.15);
+  filter: brightness(1.2);
 }
 
-/* Animación */
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* Borde lateral de subtítulos */
+.reportes-subtitulo {
+  border-left: 4px solid var(--color-primary);
 }
 
-/* === ESTADO VACÍO === */
+/* Ajuste visual para la tabla en modo oscuro */
+.reportes-tabla {
+  background-color: rgba(21, 26, 40, 0.9);
+}
+
+/* Alternar filas con leve brillo */
+.reportes-tabla tr:nth-child(even) {
+  background-color: rgba(33, 41, 61, 0.5);
+}
+
+/* Colores suaves en estado vacío */
 .reportes-vacio {
-  color: #b0b8cc;
-  font-size: 0.95rem;
-  margin: 10px 0 20px;
-  background: #151a28;
-  border: 1px dashed #2a3145;
-  border-radius: 10px;
-  padding: 14px;
-  text-align: center;
+  background: rgba(20, 26, 39, 0.7);
+  border: 1px dashed var(--color-border);
+  color: #d0d7e8;
 }
 
-/* === SCROLL SUAVE PARA TABLAS GRANDES === */
-.tabla-scroll {
-  overflow-x: auto;
-  border-radius: 10px;
-  scrollbar-width: thin;
-  scrollbar-color: #991b1b #151a28;
-}
-
-.tabla-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.tabla-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  border-radius: 4px;
-}
-.grafica-wrapper {
-    margin-top: 10px;
-    background: #151a28;
-    border: 1px solid #2a3145;
-    border-radius: 12px;
-    padding: 16px;
-}
+/* Espacio reservado para futuros overrides del módulo */
