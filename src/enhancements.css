@@ -1,0 +1,84 @@
+/* ===============================================
+   LECHERA 22 INVENTARIOS - ENHANCEMENTS.CSS
+   Microinteracciones y efectos visuales avanzados
+   =============================================== */
+
+/* === ANIMACIONES DE ENTRADA === */
+.fade-in-delayed {
+    animation: fadeInDelayed 0.8s ease-in-out;
+}
+
+@keyframes fadeInDelayed {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === HOVER INTELIGENTE EN TARJETAS === */
+.card:hover, .panel:hover, .help-card:hover, .kpi-big:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* === EFECTO DE “RESPUESTA LUMINOSA” EN BOTONES === */
+button:active, .btn:active, .help-btn:active {
+    transform: scale(0.97);
+    filter: brightness(1.2);
+}
+
+/* === FONDO DIFUMINADO PARA MODALES === */
+.modal-overlay, .admin-modal-overlay {
+    backdrop-filter: blur(8px);
+    background: rgba(10, 15, 25, 0.75);
+}
+
+/* === GRADIENTES DE ESTADO === */
+.estado-ok {
+    background: linear-gradient(90deg, rgba(34,197,94,0.12), transparent);
+}
+
+.estado-proximo {
+    background: linear-gradient(90deg, rgba(251,191,36,0.12), transparent);
+}
+
+.estado-caducado {
+    background: linear-gradient(90deg, rgba(220,38,38,0.12), transparent);
+}
+
+/* === MICROINTERACCIONES DE NAVEGACIÓN === */
+.sidebar-item, .menu-item {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.sidebar-item:hover, .menu-item:hover {
+    background-color: rgba(255,255,255,0.08);
+}
+
+/* === ANIMACIÓN PULSANTE PARA ALERTAS === */
+@keyframes alertPulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(255,91,91,0.3); }
+    50% { box-shadow: 0 0 16px rgba(255,91,91,0.6); }
+}
+
+.alert-card.attention {
+    animation: alertPulse 1.6s infinite;
+}
+
+/* === EFECTOS SUAVES EN INPUTS === */
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 6px rgba(255, 89, 89, 0.3);
+}
+
+/* === ANIMACIÓN DE CARGA GENÉRICA === */
+.loader {
+    border: 3px solid rgba(255,255,255,0.1);
+    border-top: 3px solid #ff5959;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 1.2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
